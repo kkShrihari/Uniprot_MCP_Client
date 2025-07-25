@@ -24,8 +24,22 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Bio-Informatics",
 ]
 requires-python = ">=3.8"
+
 dependencies = [
-    "requests>=2.25.0",
+    "anyio",
+    "python-dotenv",        # for .env support
+    "httpx",
+    "httpx-sse",
+    "pydantic",
+    "pydantic-settings",
+    "jsonschema",
+    "sse-starlette",
+    "starlette",
+    "uvicorn",
+    "websockets",
+    "rich",
+    "typer",
+    "pywin32",              # provides win32api, win32con, win32job, pywintypes
 ]
 
 [project.optional-dependencies]
@@ -37,31 +51,29 @@ dev = [
     "mypy>=0.800",
 ]
 
-
-
 [project.urls]
-Homepage = "https://github.com/Shrihari Kamalan Kumaraguruparan/Uniport_MCP_Client"
-Repository = "https://github.com/Shrihari Kamalan Kumaraguruparan/Uniport_MCP_Client"
-Documentation = "https://github.com/Shrihari Kamalan Kumaraguruparan/Uniport_MCP_Client#readme"
-Issues = "https://github.com/Shrihari Kamalan Kumaraguruparan/Uniport_MCP_Client/issues"
+Homepage      = "https://github.com/ShrihariKamalanKumaraguruparan/Uniport_MCP_Client"
+Repository    = "https://github.com/ShrihariKamalanKumaraguruparan/Uniport_MCP_Client"
+Documentation = "https://github.com/ShrihariKamalanKumaraguruparan/Uniport_MCP_Client#readme"
+Issues        = "https://github.com/ShrihariKamalanKumaraguruparan/Uniport_MCP_Client/issues"
 
 [tool.setuptools.packages.find]
-where = ["."]
+where   = ["."]
 include = ["Profetch*"]
 
 [tool.black]
-line-length = 88
-target-version = ['py38']
+line-length     = 88
+target-version  = ['py38']
 
 [tool.mypy]
-python_version = "3.10"
-warn_return_any = true
-warn_unused_configs = true
+python_version       = "3.10"
+warn_return_any      = true
+warn_unused_configs  = true
 disallow_untyped_defs = true
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
-python_files = ["test_*.py"]
-python_classes = ["Test*"]
+testpaths        = ["tests"]
+python_files     = ["test_*.py"]
+python_classes   = ["Test*"]
 python_functions = ["test_*"]
-addopts = "-v --cov=Profetch --cov-report=term-missing" 
+addopts          = "-v --cov=Profetch --cov-report=term-missing"
